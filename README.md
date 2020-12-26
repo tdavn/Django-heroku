@@ -1,3 +1,4 @@
+
 # Python: Getting Started
 
 A barebones Django app, which can easily be deployed to Heroku.
@@ -15,7 +16,7 @@ $ cd python-getting-started
 $ python3 -m venv getting-started
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
+$ createdb python_getting_started (createdb -U postgres newdatabase)
 
 $ python manage.py migrate
 $ python manage.py collectstatic

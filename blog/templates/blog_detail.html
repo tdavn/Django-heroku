@@ -12,6 +12,9 @@
         {% endfor %}
     </small>
     <p>{{ post.body | safe }}</p>
+    <p></p>
+    <a type="button" class="btn btn-lg btn-primary" href="{% url 'blog_index' %}"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+    <br/>
     <h3>Leave a comment:</h3>
     <form action="/blog/{{ post.pk }}/" method="post">
         {% csrf_token %}
