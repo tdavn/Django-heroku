@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "hello",
     "blog",
     "ckeditor",
+    "members",
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-            ]
+                ]
         },
     }
 ]
@@ -119,3 +120,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 
 django_heroku.settings(locals())
+LOGIN_REDIRECT_URL = 'blog_index'
+LOGOUT_REDIRECT_URL = 'index'

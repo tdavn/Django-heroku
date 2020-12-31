@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Create a new post {% endblock %}
+{% block content %}
+<br/>
+<div class="container">
+  {% if user.is_authenticated %}
+    <h1> Add blog post </h1>
+      <form method="POST">
+        <div class="form-group">
+            {% csrf_token %}  <!-- cross site resquest form token -->
+            {{ form.as_p }}   <!-- every single element in form is wrapped by <p> </p> --->
+
+            <button type="submit" class="btn btn-primary">Post</button>
+        </div>
+      </form>
+    {% else %}
+      Sorry! You do not allow to be here. <br/> <br/>
+
+    {% endif %}
+</div>
+{% endblock %}

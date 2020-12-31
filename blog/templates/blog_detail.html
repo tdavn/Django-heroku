@@ -10,6 +10,12 @@
             {{ category.name }}
         </a>&nbsp;
         {% endfor %}
+        {% if user.is_authenticated %}
+        - <a href="{% url 'update_post' post.pk %}">(Edit)</a> |
+        <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+        {% endif %}
+
+
     </small>
     <p>{{ post.body | safe }}</p>
     <p></p>

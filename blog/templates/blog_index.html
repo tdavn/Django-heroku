@@ -9,10 +9,15 @@
         {{ post.created_on.date }} |&nbsp;
         Categories:&nbsp;
         {% for category in post.categories.all %}
-        <a href="{% url 'blog_category' category.name %}">
-            {{ category.name }}
-        </a>&nbsp;
+          <a href="{% url 'blog_category' category.name %}">
+              {{ category.name }}
+          </a>&nbsp;
         {% endfor %}
+        {% if user.is_authenticated %}
+        - <a href="{% url 'update_post' post.pk %}">(Edit)</a> |
+        <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+        {% endif %}
+
     </small>
     <p>{{ post.body | slice:":400" | safe }}...</p>
     {% endfor %}

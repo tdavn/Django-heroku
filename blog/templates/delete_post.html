@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Delete Blog Post {% endblock %}
+{% block content %}
+<div class="container">
+  <br/>
+  {% if user.is_authenticated %}
+    <h1> Delete post .... </h1>
+    <br/> <br/>
+    <h3>Delete: {{ post.title }}</h3>
+    <br/>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}  <!-- cross site resquest forgery protection, see more on django doc -->
+            <strong>Are you sure?!</strong> <br/>
+            <button class="btn btn-primary">Delet Post!</button>
+        </form>    <!-- need to define a methods in models to point this post to -->
+    </div>
+    {% else %}
+      Sorry! You do not allow to do that. <br/> <br/>
+
+    {% endif %}
+</div>
+{% endblock %}

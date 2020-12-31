@@ -1,6 +1,7 @@
 from django.urls import path, include
 
 from django.contrib import admin
+from blog.views import AddPostView, UpdatePostView, DeletePostView
 
 admin.autodiscover()
 
@@ -19,4 +20,9 @@ urlpatterns = [
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
     path("blog/", include("blog.urls")),
+    path('add_post/', AddPostView.as_view(), name='add_post'),
+    path('post/edit/<int:pk>', UpdatePostView.as_view(), name='update_post'),
+    path('post/<int:pk>/remove', DeletePostView.as_view(), name='delete_post'),
+    path('members/', include('django.contrib.auth.urls')),  # This one for django system
+    # path('members/', include('members.urls')),  # This one will be defined in app's urls
 ]

@@ -1,9 +1,17 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.urls import reverse
 
 # Create your models here.
 class Category(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        # return reverse('article-detail', args=(str(self.id)))  # id is the same as pk
+        return reverse("blog_index")
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -12,6 +20,13 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField('Category', related_name='posts')
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("blog_index")
+        # return reverse('blog_detail', args=(str(self.id)))  # id is the same as pk
 
 class Comment(models.Model):
     author = models.CharField(max_length=60)
