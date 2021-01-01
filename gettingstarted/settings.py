@@ -43,7 +43,34 @@ INSTALLED_APPS = [
     "blog",
     "ckeditor",
     "members",
+    'ckeditor_uploader',
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Special': [["Format", "Bold", "Italic", "Underline", "Strike"],
+                ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
+                 'JustifyRight', 'JustifyBlock'],
+                ["Image", "Link", "Unlink"], ['Undo', 'Redo'],
+
+
+        ],
+
+    },
+    'special': {
+        'toolbar': 'Special',
+        'toolbar_Special': [["Format", "Bold", "Italic", "Underline", "Strike"],
+                ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
+                 'JustifyRight', 'JustifyBlock', 'CodeSnippet'],
+                ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'], ["Source"],
+                ["Maximize"]
+
+        ], 'extraPlugins': 'codesnippet',
+    }
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -118,6 +145,10 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
+
+# for contain uploaded files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 django_heroku.settings(locals())
 LOGIN_REDIRECT_URL = 'blog_index'

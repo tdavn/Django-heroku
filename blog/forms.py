@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post, Category
+# from ckeditor.widgets import CKEditorWidget
 
 choices = Category.objects.all().values_list('name', 'name')
 
@@ -11,6 +12,7 @@ class CommentForm(forms.Form):
             "placeholder": "Your Name"
         })
     )
+    # body = forms.CharField(widget=CKEditorWidget(
     body = forms.CharField(widget=forms.Textarea(
         attrs={
             "class": "form-control",
