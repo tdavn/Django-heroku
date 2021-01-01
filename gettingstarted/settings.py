@@ -62,11 +62,11 @@ CKEDITOR_CONFIGS = {
     },
     'special': {
         'toolbar': 'Special',
-        'toolbar_Special': [["Format", "Bold", "Italic", "Underline", "Strike"],
+        'toolbar_Special': [["Format", "Bold", "Italic", "Underline", "Strike", 'RemoveFormat'],
                 ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
                  'JustifyRight', 'JustifyBlock', 'CodeSnippet'],
                 ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'], ["Source"],
-                ["Maximize"]
+                ["Maximize", 'Blockquote']
 
         ], 'extraPlugins': 'codesnippet',
     }
