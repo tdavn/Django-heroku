@@ -18,6 +18,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     # body = models.TextField()
     # body = RichTextField(blank=True, null=True)
+    introduction = models.CharField(max_length=400, default='Add an introduction for the post!')
     body = RichTextUploadingField(blank=True, null=True, config_name='special')
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)

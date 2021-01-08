@@ -5,10 +5,16 @@
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- Responsive definition -->
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1 ">
+  <!-- End of responisve-->
+  <!-- Below is for ckeditor CodeSnippet -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
+  <!-- End of for CodeSnippet-->
   <style type="text/css">
     .jumbotron {
         background: #532f8c;
