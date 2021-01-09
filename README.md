@@ -7,7 +7,7 @@ This is customized and developed from Python-getting-started package (cloned fro
 
 ## New features
 
-### Upgraded: Python 3.8.5, Django 3.1, Bootstrap v4.5
+### Upgraded: Python 3.8.5, Django 3.1, Bootstrap v4.5, a new venv.
 ### New third-party apps: Ckeditor, 
 ### New apps added: Blog, authentication, tag ect.
 
