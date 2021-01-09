@@ -1,30 +1,15 @@
 
-# Python: Getting Started
+# Django-Heroku
 
-A barebones Django app, which can easily be deployed to Heroku.
+A django framework that develop to fit Heoku's deployment.
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+This is customized and developed from Python-getting-started package (cloned from https://github.com/heroku/python-getting-started.git) 
 
-## Running Locally
+## New features
 
-Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
-
-```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
-
-$ python3 -m venv getting-started
-$ pip install -r requirements.txt
-
-$ createdb python_getting_started (createdb -U postgres newdatabase)
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
-$ heroku local
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+### Upgraded: Python 3.8.5, Django 3.1, Bootstrap v4.5
+### New third-party apps: Ckeditor, 
+### New apps added: Blog, authentication, tag ect.
 
 ## Deploying to Heroku
 
