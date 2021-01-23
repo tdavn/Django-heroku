@@ -30,8 +30,8 @@ class PostForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),  # class from bootstrap form element
             'categories': forms.SelectMultiple(choices=list(choices), attrs={'class': 'form-control'}),
-            'introduction': forms.Textarea(attrs={'class': 'form-group'}),
-            'body': forms.Textarea(attrs={'class': 'form-group'}),
+            'introduction': forms.Textarea(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
 class EditForm(forms.ModelForm):
     class Meta:
